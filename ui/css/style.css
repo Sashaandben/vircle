@@ -15,7 +15,10 @@
 .message-sent.message-pic .message-text {
     background: #e5e5ea;
 }
-
+.messages-content{
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+}
 @media (max-width: 768px) {
     .view-left {
         width: 160px;

@@ -7,22 +7,34 @@ var definition = {smile:{title:"Smile",codes:[":)",":=)",":-)"]},"sad-smile":{ti
 
 var currentLine = 1;
 
-var chats = [
+var vircleChat = [
     {messageId: 0, name: "vircle", message: 'Hi Irene, are you ok?', avatar: "", track: "150814-019.wav", date: new Date()},
     {messageId: 1, name: "vircle", message: "I picked up from your last phone conversation that you were upset about something", avatar:'', track: "150814-002.wav", date: new Date()},
     {messageId: 2, name: "vircle", message: "You cried and you've been using 42% more negative adjectives than your daily average in your emails and messaging.", avatar:'', track: "150814-004.wav", date: new Date()},
     {messageId: 3, name: "vircle", message: "Thank you. That’s what Vircle is here for.<br>So, what happened Irene?.", avatar:'', track: "150814-006.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "I'm sorry to hear that.", avatar:'', track: "150814-007.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "That seems like ‘all or nothing thinking’ - a distortion of reality. Before we get to further intervention, let me crawl the net to show you relevant data for you.",
+    {messageId: 4, name: "vircle", message: "I'm sorry to hear that.", avatar:'', track: "150814-007.wav", date: new Date()},
+    {messageId: 5, name: "vircle", message: "That seems like ‘all or nothing thinking’ - a distortion of reality. Before we get to further intervention, let me crawl the net to show you relevant data for you.",
     avatar:'', track: "150814-009.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "So Linkedin data shows, that …. 16,000 people with a similar profile to yours found jobs in the Bay area in the last three months.", avatar:'', track: "150814-010.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "From what I know about you, you respond most optimally to Mindfulness Based Stress Reduction and being with a close friend. Let me see …", avatar:'', track: "150814-012.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "These are my top suggestions for you:<ul><li>Lie down and do this 30 minute body scan</li><li>Call Ross, he is close to your G P S location right now</li><li>Let me challenge your thinking through Cognitive Behavioral Therapy</li>", avatar:'', track: "150814-015.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "Before you go, I want to leave you with this", avatar:'', track: "150814-017.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "It’s never the changes you want, that change everything.", avatar:'', track: "150814-0011.wav", date: new Date()},
-
+    {messageId: 6, name: "vircle", message: "So Linkedin data shows, that …. 16,000 people with a similar profile to yours found jobs in the Bay area in the last three months.", avatar:'', track: "150814-010.wav", date: new Date()},
+    {messageId: 7, name: "vircle", message: "From what I know about you, you respond most optimally to Mindfulness Based Stress Reduction and being with a close friend. Let me see …", avatar:'', track: "150814-012.wav", date: new Date()},
+    {messageId: 8, name: "vircle", message: "These are my top suggestions for you:<ul><li>Lie down and do this 30 minute body scan</li><li>Call Ross, he is close to your G P S location right now</li><li>Let me challenge your thinking through Cognitive Behavioral Therapy</li>", avatar:'', track: "150814-015.wav", date: new Date()},
+    {messageId: 9, name: "vircle", message: "Before you go, I want to leave you with this", avatar:'', track: "150814-017.wav", date: new Date()},
+    {messageId: 10, name: "vircle", message: "<img src='img/quote.png'>", avatar:'', track: "150814-0011.wav", date: new Date()},
+    {messageId: 11, name: "vircle", message: "It’s never the changes you want, that change everything.", avatar:'', track: "150814-0011.wav", date: new Date()},
     ];
 
+var userChat = [null,null,
+    {messageId: 2, name: "irene", message: "How could you tell?", avatar:'', track: "", date: new Date()},
+    {messageId: 3, name: "irene", message: "That’s very observant of you.", avatar:'', track: "", date: new Date()},
+    {messageId: 4, name: "irene", message: "I lost my job today.", avatar:'', track: "", date: new Date()},
+    {messageId: 5, name: "irene", message: "Yes, my life is over.", avatar:'', track: "", date: new Date()},
+    {messageId: 6, name: "irene", message: "That would be helpful.", avatar:'', track: "", date: new Date()},
+    {messageId: 7, name: "irene", message: "Well yes. But I still feel very stressed and that I have failed.", avatar:'', track: "", date: new Date()},
+    null,
+    {messageId: 9, name: "irene", message: "*Irene picks body scan.", avatar:'', track: "", date: new Date()},
+    null,
+    null
+];
 
 var users = [{name: "vircle1"}];
 
@@ -64,30 +76,13 @@ function stripMessage(messageText) {
     return messageText;
 }
 
-/*function loadMessages(messages) {
-    var html = '', messageId, message;
-    for (messageId in messages) {
-        message = messages[messageId];
-        if (message.date && lastDate) {
-            if (message.date - lastDate > 1000 * 60 * 5) {
-                html += '<div class="messages-date">' + formatDate(message.date) + '</div>';
-            }
-        }
-        var messageText = stripMessage(message.message);
-        html += '<div class="message message-received"><div class="message-name">' + message.name + '</div><div class="message-text">' + messageText + '</div>' + (message.avatar ? '<div class="message-avatar" style="background-image:url(' + (message.avatar) + ')"></div>' : '') + '</div>';
-        if(message.date) lastDate = message.date;
-    }
-    $('.messages-content .messages').html(html);
-    vircle7.initMessages('.page[data-page="messages"]');
-}*/
 
 function loadMessageVircle(line){
-
-    var myLine = chats[line];
-    vircle_reply(myLine.message);
-    voice(myLine.track);
-    currentLine = currentLine + 1;
-
+    if(line < vircleChat.length){
+        var myLine = vircleChat[line];
+        vircle_reply(myLine.message);
+        voice(myLine.track);
+    }
 }
 
 function vircle_reply(inputMessage){
@@ -106,36 +101,39 @@ function vircle_reply(inputMessage){
     };
 
     vircle7.addMessage(response);
-
-
 }
 
 // Send message
 $$('.messagebar a.link').on('click', function () {
-    var textarea = $$('.messagebar textarea');
-    var messageText = textarea.val();
-    if (messageText.length === 0) return;
-    textarea.val('').trigger('change');
-    var date = new Date();
-    var offset = date.getTimezoneOffset() * 60 * 1000;
-    date = date.getTime() + offset;
-    var day, time;
-    if (!lastDate || (lastDate && date - lastDate > 1000 * 60 * 5)) {
-        day = formatDay(date);
-        time = formatTime(date);
-        lastDate = date;
-    }
-    //chats.push({name: username, message: messageText, avatar: avatar, date: date});
 
-    // Add Message
-    vircle7.addMessage({
-        text: stripMessage(messageText),
-        type: 'sent',
-        name: username,
-        avatar: avatar,
-        day: day,
-        time: time
-    });
+    currentLine = currentLine + 1;
+
+    var userLine = userChat[currentLine];
+    if(userLine != null){
+        var textarea = $$('.messagebar textarea');
+        var messageText = userLine.message; //textarea.val();
+        if (messageText.length === 0) return;
+        textarea.val('').trigger('change');
+        var date = new Date();
+        var offset = date.getTimezoneOffset() * 60 * 1000;
+        date = date.getTime() + offset;
+        var day, time;
+        if (!lastDate || (lastDate && date - lastDate > 1000 * 60 * 5)) {
+            day = formatDay(date);
+            time = formatTime(date);
+            lastDate = date;
+        }
+
+        // Add Message
+        vircle7.addMessage({
+            text: stripMessage(messageText),
+            type: 'sent',
+            name: username,
+            avatar: avatar,
+            day: day,
+            time: time
+        });
+    }
 
     // vircle reply.
     setTimeout(function() { loadMessageVircle(currentLine) }, 2000);
@@ -156,7 +154,7 @@ $$('.messagebar a.link').on('click', function () {
             time = formatTime(date);
             lastDate = date;
         }
-        chats.push({name: username, message: messageText, avatar: avatar, date: date});
+        vircleChat.push({name: username, message: messageText, avatar: avatar, date: date});
         vircle7.addMessage({
             text: messageText,
             type: 'sent',
@@ -180,9 +178,9 @@ function voice(track){
 
 // Start the demo.
 function start() {
-    voice(chats[0].track);
+    voice(vircleChat[0].track);
     //@todo: change this to a custom modal to change the button texts.
-    vircle7.confirm(chats[0].message,
+    vircle7.confirm(vircleChat[0].message,
         function () {
             //OK
             //start dialog.
