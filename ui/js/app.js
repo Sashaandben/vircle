@@ -195,8 +195,8 @@ function start() {
     window.tracks = [];
     voice(vircleChat[0].track);
         vircle7.modal({
-            title: 'yo!',
-            text: vircleChat[0].message,
+            title: vircleChat[0].message,
+            text: '',
             buttons: [
                 {
                     text: 'Not right now',
