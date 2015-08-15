@@ -8,30 +8,32 @@ var definition = {smile:{title:"Smile",codes:[":)",":=)",":-)"]},"sad-smile":{ti
 var currentLine = 1;
 
 var vircleChat = [
-    {messageId: 0, name: "vircle", message: 'Hi Irene, are you ok?', avatar: "", track: "150814-019.wav", date: new Date()},
-    {messageId: 1, name: "vircle", message: "I picked up from your last phone conversation that you were upset about something", avatar:'', track: "150814-002.wav", date: new Date()},
-    {messageId: 2, name: "vircle", message: "You cried and you've been using 42% more negative adjectives than your daily average in your emails and messaging.", avatar:'', track: "150814-004.wav", date: new Date()},
-    {messageId: 3, name: "vircle", message: "Thank you. That’s what Vircle is here for.<br>So, what happened Irene?.", avatar:'', track: "150814-006.wav", date: new Date()},
-    {messageId: 4, name: "vircle", message: "I'm sorry to hear that.", avatar:'', track: "150814-007.wav", date: new Date()},
-    {messageId: 5, name: "vircle", message: "That seems like ‘all or nothing thinking’ - a distortion of reality. Before we get to further intervention, let me crawl the net to show you relevant data for you.",
+    {messageId: 0, name: "vircle", auto: false, popup: null, message: 'Hi Irene, are you ok?', avatar: "", track: "150814-019.wav", date: new Date()},
+    {messageId: 1, name: "vircle", auto: false, popup: null, message: "I picked up from your last phone conversation that you were upset about something", avatar:'', track: "150814-002.wav", date: new Date()},
+    {messageId: 2, name: "vircle", auto: false, popup: null, message: "You cried and you've been using 42% more negative adjectives than your daily average in your emails and messaging.", avatar:'', track: "150814-004.wav", date: new Date()},
+    {messageId: 3, name: "vircle", auto: false, popup: null, message: "Thank you. That’s what Vircle is here for. So, what happened Irene?.", avatar:'', track: "150814-006.wav", date: new Date()},
+    {messageId: 4, name: "vircle", auto: false, popup: null, message: "I'm sorry to hear that.", avatar:'', track: "150814-007.wav", date: new Date()},
+    {messageId: 5, name: "vircle", auto: false, popup: null, message: "That seems like ‘all or nothing thinking’ - a distortion of reality. Before we get to further intervention, let me crawl the net to show you relevant data for you.",
     avatar:'', track: "150814-009.wav", date: new Date()},
-    {messageId: 6, name: "vircle", message: "So Linkedin data shows, that …. 16,000 people with a similar profile to yours found jobs in the Bay area in the last three months.", avatar:'', track: "150814-010.wav", date: new Date()},
-    {messageId: 7, name: "vircle", message: "From what I know about you, you respond most optimally to Mindfulness Based Stress Reduction and being with a close friend. Let me see …", avatar:'', track: "150814-012.wav", date: new Date()},
-    {messageId: 8, name: "vircle", message: "These are my top suggestions for you:<ul><li>Lie down and do this 30 minute body scan</li><li>Call Ross, he is close to your G P S location right now</li><li>Let me challenge your thinking through Cognitive Behavioral Therapy</li>", avatar:'', track: "150814-015.wav", date: new Date()},
-    {messageId: 9, name: "vircle", message: "Before you go, I want to leave you with this", avatar:'', track: "150814-017.wav", date: new Date()},
-    {messageId: 10, name: "vircle", message: "<img src='img/quote.png'>", avatar:'', track: "150814-0011.wav", date: new Date()},
-    {messageId: 11, name: "vircle", message: "It’s never the changes you want, that change everything.", avatar:'', track: "150814-0011.wav", date: new Date()},
+    {messageId: 6, name: "vircle",  auto: false, popup: null, message: "So Linkedin data shows, that …. 16,000 people with a similar profile to yours found jobs in the Bay area in the last three months.", avatar:'', track: "150814-010.wav", date: new Date()},
+    {messageId: 7, name: "vircle",  auto: false, popup: null, message: "From what I know about you, you respond most optimally to Mindfulness Based Stress Reduction and being with a close friend. Let me see …", avatar:'', track: "150814-012.wav", date: new Date()},
+    {messageId: 8, name: "vircle",  auto: false, popup: 1, message: "", avatar:'', track: "150814-015.wav", date: new Date()},
+    {messageId: 9, name: "vircle",  auto: false, popup: null, message: "Before you go, I want to leave you with this", avatar:'', track: "150814-016.wav", date: new Date()},
+    {messageId: 10, name: "vircle", auto: true, popup: null, message: "<img src='img/quote.png'>", avatar:'', track: "", date: new Date()},
+    {messageId: 11, name: "vircle", auto: false, popup: null, message: "It’s never the changes you want, that change everything.", avatar:'', track: "150814-017.wav", date: new Date()},
+    {messageId: 12, name: "vircle", auto: false, popup: 2, message: "", avatar:'', track: "", date: new Date()},
+
     ];
 
 var userChat = [null,null,
-    {messageId: 2, name: "irene", message: "How could you tell?", avatar:'', track: "", date: new Date()},
-    {messageId: 3, name: "irene", message: "That’s very observant of you.", avatar:'', track: "", date: new Date()},
-    {messageId: 4, name: "irene", message: "I lost my job today.", avatar:'', track: "", date: new Date()},
-    {messageId: 5, name: "irene", message: "Yes, my life is over.", avatar:'', track: "", date: new Date()},
-    {messageId: 6, name: "irene", message: "That would be helpful.", avatar:'', track: "", date: new Date()},
-    {messageId: 7, name: "irene", message: "Well yes. But I still feel very stressed and that I have failed.", avatar:'', track: "", date: new Date()},
+    {messageId: 2, name: "irene", auto: false, popup: null, message: "How could you tell?", avatar:'', track: "", date: new Date()},
+    {messageId: 3, name: "irene", auto: false, popup: null, message: "That’s very observant of you.", avatar:'', track: "", date: new Date()},
+    {messageId: 4, name: "irene", auto: false, popup: null, message: "I lost my job today.", avatar:'', track: "", date: new Date()},
+    {messageId: 5, name: "irene", auto: false, popup: null, message: "Yes, my life is over.", avatar:'', track: "", date: new Date()},
+    {messageId: 6, name: "irene", auto: false, popup: null, message: "That would be helpful.", avatar:'', track: "", date: new Date()},
+    {messageId: 7, name: "irene", auto: false, popup: null, message: "Well yes. But I still feel very stressed and that I have failed.", avatar:'', track: "", date: new Date()},
     null,
-    {messageId: 9, name: "irene", message: "*Irene picks body scan.", avatar:'', track: "", date: new Date()},
+    {messageId: 9, name: "irene", auto: false, popup: null, message: "*Irene picks body scan.", avatar:'', track: "", date: new Date()},
     null,
     null
 ];
@@ -80,7 +82,18 @@ function stripMessage(messageText) {
 function loadMessageVircle(line){
     if(line < vircleChat.length){
         var myLine = vircleChat[line];
-        vircle_reply(myLine.message);
+        if(myLine.popup != null){
+              vircle7.popup('.popup-options-' + myLine.popup);
+        }else{
+            vircle_reply(myLine.message);
+            voice(myLine.track);
+        }
+    }
+}
+
+function sayLine( line ){
+    var myLine = vircleChat[line];
+    if(typeof myLine != "undefined"){
         voice(myLine.track);
     }
 }
@@ -103,8 +116,24 @@ function vircle_reply(inputMessage){
     vircle7.addMessage(response);
 }
 
+$$('.popup-options-1').on('closed', function () {
+  console.log('options Popup closed');
+  $$('.messagebar a.link').click();
+});
+
+$$('.popup-options-1').on('opened', function () {
+  console.log('options Popup opened');
+  sayLine(8);
+});
+
+
+$$('.popup-options-2').on('closed', function () {
+  console.log('rating Popup closed');
+  window.location.href = "../index.html";
+});
+
 // Send message
-$$('.messagebar a.link').on('click', function () {
+$$('.messages-content').on('click', function () {
 
     currentLine = currentLine + 1;
 
@@ -136,58 +165,54 @@ $$('.messagebar a.link').on('click', function () {
     }
 
     // vircle reply.
-    setTimeout(function() { loadMessageVircle(currentLine) }, 2000);
+    vircle7.showIndicator();
+    setTimeout(function () {
+        vircle7.hideIndicator();
+        loadMessageVircle(currentLine)
+    }, 2000);
 
 
 
 });
-
-/*$$('#sendPhoto').on('click', function () {
-    vircle7.prompt('Enter your image URL', function (data) {
-        var messageText = '<img src="'+data+'">';
-        var date = new Date();
-        var offset = date.getTimezoneOffset() * 60 * 1000;
-        date = date.getTime() + offset;
-        var day, time;
-        if (!lastDate || (lastDate && date - lastDate > 1000 * 60 * 5)) {
-            day = formatDay(date);
-            time = formatTime(date);
-            lastDate = date;
-        }
-        vircleChat.push({name: username, message: messageText, avatar: avatar, date: date});
-        vircle7.addMessage({
-            text: messageText,
-            type: 'sent',
-            name: username,
-            avatar: avatar,
-            day: day,
-            time: time
-        });
-        lastDate = date;
-    });
-});*/
-
 
 function restartDialog(){
     window.location.reload();
 }
 
 function voice(track){
-    jBeep('voice/' + track);
+    //stop all sounds
+    window.tracks.forEach(function (sound) {
+        sound.pause();
+        sound.currentTime = 0;
+    });
+    if(track != ""){
+        jBeep('voice/' + track);
+    }
 }
 
 // Start the demo.
 function start() {
+    window.tracks = [];
     voice(vircleChat[0].track);
-    //@todo: change this to a custom modal to change the button texts.
-    vircle7.confirm(vircleChat[0].message,
-        function () {
-            //OK
-            //start dialog.
-            currentLine=1;
-            loadMessageVircle(currentLine);
-        },
-        //cancel, restart.
-        start);
+        vircle7.modal({
+            title: 'yo!',
+            text: vircleChat[0].message,
+            buttons: [
+                {
+                    text: 'Not right now',
+                    onClick: function() {
+                      vircle7.alert('ok, bye!', function(){ window.location.href = "../index.html";});
+                    }
+                },
+                {
+                    text: 'Hey Vircle!',
+                    onClick: function() {
+                        //start dialog.
+                        currentLine=1;
+                        loadMessageVircle(currentLine);
+                    }
+                }
+            ]
+        });
 }
 start();

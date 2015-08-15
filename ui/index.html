@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" manifest="cache.manifest> <!-- manifest="cache.manifest" -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -62,8 +62,8 @@
           <!-- Page, data-page contains page name-->
             <div data-page="messages" class="page no-toolbar toolbar-fixed">
                 <div class="toolbar messagebar">
-                    <div class="toolbar-inner"><a href="#" id="sendPhoto" class="link icon-only"><i class="fa fa-microphone"></i></a>
-                        <textarea placeholder="Message"></textarea><a href="#" class="link">Go</a>
+                    <div class="toolbar-inner"><a href="#" id="speak" class="link icon-only"><i class="fa fa-microphone"></i></a>
+                        <textarea placeholder="Message"></textarea><a href="#" class="link">Go!</a>
                     </div>
                 </div>
                 <div class="page-content messages-content">
@@ -73,11 +73,29 @@
         </div>
       </div>
     </div>
+
+    <div class="popup popup-options-1">
+    <div class="content-block">
+        <h3>These are my top suggestions for you:</h3>
+        <p><a href="#" class="close-popup">Lie down and do this 30 minute body scan</a></p>
+        <p><a href="#" class="close-popup">Call Ross, he is close to your G P S location right now</a></p>
+        <p><a href="#" class="close-popup">Let me challenge your thinking through Cognitive Behavioral Therapy</a></p>
+    </div>
+  </div>
+
+  <div class="popup popup-options-2">
+  <div class="content-block">
+      <h3>Please rate the conversation:</h3>
+      <p><a href="#" class="close-popup">Love it</a></p>
+      <p><a href="#" class="close-popup">Could be better</a></p>
+  </div>
+</div>
+
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/emoticons.js"></script>
     <script type="text/javascript" src="js/md5.js"></script>
-    <script type="text/javascript" src="js/jBeep.min.js"></script>
+    <script type="text/javascript" src="js/jBeep.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
