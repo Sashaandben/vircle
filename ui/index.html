@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="cache.manifest"> <!-- manifest="cache.manifest" -->
+<html lang="en"> <!-- manifest="cache.manifest" -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -51,9 +51,9 @@
       </div>
       <!-- Main view (right) -->
       <div class="view view-main navbar-through">
-        <div class="navbar">
+        <div class="navbar toplogo">
           <div class="navbar-inner">
-            <div class="center sliding">Vircle</div>
+            <div class="center sliding "><img src="img/blue.png" width="100px"></div>
             <!-- a href="#" class="link" onclick="newUser.remove();chattr.alert('You are now logged off.');location.reload();">Logout</a -->
           </div>
         </div>
@@ -74,20 +74,60 @@
       </div>
     </div>
 
-    <div class="popup popup-options-1">
-    <div class="content-block">
-        <h3>These are my top suggestions for you:</h3>
-        <p><a href="#" class="close-popup">Lie down and do this 30 minute body scan</a></p>
-        <p><a href="#" class="close-popup">Call Ross, he is close to your G P S location right now</a></p>
-        <p><a href="#" class="close-popup">Let me challenge your thinking through Cognitive Behavioral Therapy</a></p>
+    <div class="popup popup-options-1 optionspage">
+
+    <div class="content-block-title forcewhite">These are my top suggestions for you:</div>
+    <div class="list-block">
+      <ul>
+        <li class="item-content">
+          <div class="item-media"><i class="fa fa-heartbeat"></i></div>
+          <div class="item-inner">
+            <div class="item-title"><a href="#" class="close-popup">Lie down and do this 30 minute body scan</a></div>
+            <div class="item-after"><a href="#" class="close-popup"><i class="fa fa-angle-right"></i></a></div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-media"><i class="fa fa-users"></i></div>
+          <div class="item-inner">
+            <div class="item-title"><a href="#" class="close-popup">Call Ross, he is close to your G P S location right now</a></div>
+            <div class="item-after"><a href="#" class="close-popup"><i class="fa fa-angle-right"></i></a></div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-media"><i class="fa fa-user-md"></i></div>
+          <div class="item-inner">
+            <div class="item-title"><a href="#" class="close-popup">Let me challenge your thinking through Cognitive Behavioral Therapy</a></div>
+            <div class="item-after"><a href="#" class="close-popup"><i class="fa fa-angle-right"></i></a></div>
+          </div>
+        </li>
+      </ul>
+      <div class="list-block-label">Please, select one of the options</div>
     </div>
+
   </div>
 
-  <div class="popup popup-options-2">
-  <div class="content-block">
-      <h3>Please rate the conversation:</h3>
-      <p><a href="#" class="close-popup">Love it</a></p>
-      <p><a href="#" class="close-popup">Could be better</a></p>
+  <div class="popup popup-options-2 optionspage">
+
+  <div class="content-block-title forcewhite">Please rate the conversation:</div>
+  <div class="list-block">
+    <ul>
+      <li class="item-content">
+        <div class="item-media"><i class="fa fa-heart"></i></div>
+        <div class="item-inner">
+          <div class="item-title"><a href="#" class="close-popup">Love it</a></div>
+          <div class="item-after"><a href="#" class="close-popup"><i class="fa fa-angle-right"></i></a></div>
+        </div>
+      </li>
+      <li class="item-content">
+        <div class="item-media"><i class="fa fa-thumbs-down"></i></div>
+        <div class="item-inner">
+          <div class="item-title"><a href="#" class="close-popup">Could be better</a></div>
+          <div class="item-after"><a href="#" class="close-popup"><i class="fa fa-angle-right"></i></a></div>
+        </div>
+      </li>
+
+    </ul>
+    <div class="list-block-label">Please, select one of the options</div>
   </div>
 </div>
 

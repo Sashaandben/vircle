@@ -118,7 +118,7 @@ function vircle_reply(inputMessage){
 
 $$('.popup-options-1').on('closed', function () {
   console.log('options Popup closed');
-  $$('.messagebar a.link').click();
+  $$('.messages-content').click();
 });
 
 $$('.popup-options-1').on('opened', function () {
@@ -132,6 +132,10 @@ $$('.popup-options-2').on('closed', function () {
   window.location.href = "../index.html";
 });
 
+.messagebar a.link
+$$('.messages-content').on('click', function () {
+    $$('.messages-content').click();
+});
 // Send message
 $$('.messages-content').on('click', function () {
 
