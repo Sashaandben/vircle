@@ -33,7 +33,7 @@ var userChat = [null,null,
     {messageId: 6, name: "irene", auto: false, popup: null, message: "That would be helpful.", avatar:'', track: "", date: new Date()},
     {messageId: 7, name: "irene", auto: false, popup: null, message: "Well yes. But I still feel very stressed and that I have failed.", avatar:'', track: "", date: new Date()},
     null,
-    {messageId: 9, name: "irene", auto: false, popup: null, message: "*Irene picks body scan.", avatar:'', track: "", date: new Date()},
+    {messageId: 9, name: "irene", auto: false, popup: null, message: "30 min body scan.", avatar:'', track: "", date: new Date()},
     null,
     null
 ];
