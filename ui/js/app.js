@@ -132,7 +132,6 @@ $$('.popup-options-2').on('closed', function () {
   window.location.href = "../index.html";
 });
 
-.messagebar a.link
 $$('.messages-content').on('click', function () {
     $$('.messages-content').click();
 });
