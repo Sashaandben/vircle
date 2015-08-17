@@ -33,7 +33,7 @@ var userChat = [null,null,
     {messageId: 6, name: "irene", auto: false, popup: null, message: "That would be helpful.", avatar:'', track: "", date: new Date()},
     {messageId: 7, name: "irene", auto: false, popup: null, message: "Well yes. But I still feel very stressed and that I have failed.", avatar:'', track: "", date: new Date()},
     null,
-    {messageId: 9, name: "irene", auto: false, popup: null, message: "*Irene picks body scan.", avatar:'', track: "", date: new Date()},
+    {messageId: 9, name: "irene", auto: false, popup: null, message: "30 min body scan.", avatar:'', track: "", date: new Date()},
     null,
     null
 ];
@@ -118,7 +118,7 @@ function vircle_reply(inputMessage){
 
 $$('.popup-options-1').on('closed', function () {
   console.log('options Popup closed');
-  $$('.messagebar a.link').click();
+  $$('.messages-content').click();
 });
 
 $$('.popup-options-1').on('opened', function () {
@@ -132,6 +132,9 @@ $$('.popup-options-2').on('closed', function () {
   window.location.href = "../index.html";
 });
 
+$$('.messages-content').on('click', function () {
+    $$('.messages-content').click();
+});
 // Send message
 $$('.messages-content').on('click', function () {
 

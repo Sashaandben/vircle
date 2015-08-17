@@ -28,8 +28,39 @@
 }
 .splash-page a{
     color: #fff !important;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.splashlogo{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.toplogo{
+    background-color: #585858 !important;
 }
 
+.optionspage{
+    background: -webkit-linear-gradient(180deg, #2c3e50 10%, #3498db 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(180deg, #2c3e50 10%, #3498db 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(180deg, #2c3e50 10%, #3498db 90%); /* IE10 */
+    background:      -o-linear-gradient(180deg, #2c3e50 10%, #3498db 90%); /* Opera 11.10+ */
+    background:         linear-gradient(180deg, #2c3e50 10%, #3498db 90%); /* W3C */
+}
+
+.optionspage .list-block .item-title{
+    white-space: normal !important;
+}
+
+.optionspage a{
+    color: #000;
+    text-decoration: none;
+}
+
+.forcewhite{
+    color: #fff;
+}
 @media (max-width: 768px) {
     .view-left {
         width: 160px;
